@@ -1,59 +1,85 @@
 # front-end-unicorn
 
-A modern front-end project built with **React**, **TypeScript**, and **Vite**.
+A front-end project built with **Angular** (HTML templates + TypeScript), generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
 
 ## Tech Stack
 
-- [React 19](https://react.dev/) — UI library
-- [TypeScript](https://www.typescriptlang.org/) — Type-safe JavaScript
-- [Vite](https://vite.dev/) — Fast build tool & dev server
-- [Vitest](https://vitest.dev/) — Unit testing framework
-- [Testing Library](https://testing-library.com/) — Component testing utilities
-- [ESLint](https://eslint.org/) — Code linting
+- [Angular 21](https://angular.dev/) — component framework with HTML templates
+- [TypeScript](https://www.typescriptlang.org/) — type-safe JavaScript
+- [RxJS](https://rxjs.dev/) — reactive programming
+- [Vitest](https://vitest.dev/) — unit testing (via `ng test`)
+- [Prettier](https://prettier.io/) — code formatting
 
-## Getting Started
+## Project structure
 
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Start development server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## Available Scripts
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server with HMR |
-| `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run unit tests once |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Run tests with coverage report |
-
-## Project Structure
+Components are split into separate files (HTML template, CSS, TypeScript class, spec):
 
 ```
 src/
-├── assets/          # Static assets (images, icons)
-├── test/
-│   └── setup.ts     # Test setup (jest-dom matchers)
-├── App.css          # App-level styles
-├── App.test.tsx     # App component tests
-├── App.tsx          # Root application component
-├── index.css        # Global styles
-└── main.tsx         # Application entry point
+├── app/
+│   ├── app.ts          # Root component class
+│   ├── app.html        # Root component template (HTML)
+│   ├── app.css         # Root component styles
+│   ├── app.spec.ts     # Root component tests
+│   ├── app.config.ts   # Application configuration
+│   └── app.routes.ts   # Routing configuration
+├── index.html          # Application shell
+├── main.ts             # Application bootstrap
+└── styles.css          # Global styles
 ```
+
+## Development server
+
+To start a local development server, run:
+
+```bash
+ng serve
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
