@@ -1,0 +1,39 @@
+{
+  "name": "@feu/components-html",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Vanilla HTML/JS component set. Factory functions + custom-element wrappers.",
+  "type": "module",
+  "main": "./dist/components-html.cjs",
+  "module": "./dist/components-html.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components-html.js",
+      "require": "./dist/components-html.cjs"
+    },
+    "./style.css": "./dist/components-html.css",
+    "./elements": {
+      "types": "./dist/elements.d.ts",
+      "import": "./dist/elements.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@feu/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "sass": "^1.80.0",
+    "typescript": "~5.8.0",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,32 @@
+@use "@feu/tokens/scss/mixins" as *;
+
+.feu-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--feu-space-xs);
+}
+
+.feu-input-label {
+  font-size: var(--feu-font-size-sm);
+  color: var(--feu-color-text-muted);
+}
+
+.feu-input {
+  appearance: none;
+  font: inherit;
+  color: var(--feu-color-text);
+  background-color: var(--feu-color-surface);
+  border: 1px solid var(--feu-color-border);
+  border-radius: var(--feu-radius-md);
+  padding: var(--feu-space-sm) var(--feu-space-md);
+  transition: border-color var(--feu-transition-fast);
+}
+
+.feu-input:focus-visible {
+  @include focus-ring;
+
+  border-color: var(--feu-color-focus);
+}
+
+.feu-input[aria-invalid="true"] { border-color: var(--feu-color-danger); }
+.feu-input[disabled] { opacity: 0.6; cursor: not-allowed; }

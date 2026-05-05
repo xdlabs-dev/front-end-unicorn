@@ -1,0 +1,64 @@
+@use "@feu/tokens/scss/mixins" as *;
+
+.feu-btn {
+  @include button-reset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--feu-space-sm);
+  padding: var(--feu-space-sm) var(--feu-space-lg);
+  border-radius: var(--feu-radius-md);
+  font-size: var(--feu-font-size-md);
+  font-weight: 500;
+  line-height: 1;
+  transition:
+    background-color var(--feu-transition-fast),
+    color var(--feu-transition-fast),
+    border-color var(--feu-transition-fast);
+}
+
+.feu-btn:focus-visible {
+  @include focus-ring;
+}
+
+.feu-btn[disabled],
+.feu-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.feu-btn--primary {
+  background-color: var(--feu-color-primary);
+  color: #fff;
+}
+
+.feu-btn--primary:hover:not([disabled]) {
+  background-color: var(--feu-color-primary-hover);
+}
+
+.feu-btn--primary:active:not([disabled]) {
+  background-color: var(--feu-color-primary-active);
+}
+
+.feu-btn--secondary {
+  background-color: var(--feu-color-surface);
+  color: var(--feu-color-text);
+  border: 1px solid var(--feu-color-border);
+}
+
+.feu-btn--secondary:hover:not([disabled]) {
+  background-color: var(--feu-color-surface-muted);
+}
+
+.feu-btn--ghost {
+  background-color: transparent;
+  color: var(--feu-color-primary);
+}
+
+.feu-btn--ghost:hover:not([disabled]) {
+  background-color: var(--feu-color-surface-muted);
+}
+
+.feu-btn--sm { padding: var(--feu-space-xs) var(--feu-space-md); font-size: var(--feu-font-size-sm); }
+.feu-btn--lg { padding: var(--feu-space-md) var(--feu-space-xl); font-size: var(--feu-font-size-lg); }

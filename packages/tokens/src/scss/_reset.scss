@@ -1,0 +1,16 @@
+// Minimal opinionated reset, scoped under .feu-root so consumers opt in.
+
+.feu-root,
+:where(.feu-root) {
+  box-sizing: border-box;
+  font-family: var(--feu-font-family);
+  font-size: var(--feu-font-size-md);
+  line-height: var(--feu-line-height-md);
+  color: var(--feu-color-text);
+}
+
+.feu-root *,
+.feu-root *::before,
+.feu-root *::after {
+  box-sizing: inherit;
+}

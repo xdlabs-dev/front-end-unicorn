@@ -1,0 +1,5 @@
+// Re-uses the shared SCSS so visuals match the HTML version exactly.
+@use "tokens" as *;
+@use "mixins" as *;
+
+@import "../../../../components-html/src/components/button/button.scss";

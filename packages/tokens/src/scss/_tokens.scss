@@ -1,0 +1,43 @@
+// Design token CSS custom properties — single source of truth for colors,
+// spacing, radii, and typography across both component sets.
+
+:root {
+  // Colors
+  --feu-color-primary: #3b5bdb;
+  --feu-color-primary-hover: #2f49b0;
+  --feu-color-primary-active: #26398a;
+  --feu-color-surface: #ffffff;
+  --feu-color-surface-muted: #f5f6fa;
+  --feu-color-border: #dadde5;
+  --feu-color-text: #1a1c23;
+  --feu-color-text-muted: #5a6273;
+  --feu-color-danger: #d6336c;
+  --feu-color-success: #2f9e44;
+  --feu-color-focus: #4dabf7;
+
+  // Spacing
+  --feu-space-xs: 4px;
+  --feu-space-sm: 8px;
+  --feu-space-md: 12px;
+  --feu-space-lg: 16px;
+  --feu-space-xl: 24px;
+  --feu-space-xxl: 32px;
+
+  // Radii
+  --feu-radius-sm: 4px;
+  --feu-radius-md: 8px;
+  --feu-radius-lg: 12px;
+  --feu-radius-pill: 999px;
+
+  // Typography
+  --feu-font-family:
+    -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --feu-font-size-sm: 12px;
+  --feu-font-size-md: 14px;
+  --feu-font-size-lg: 16px;
+  --feu-font-size-xl: 20px;
+  --feu-line-height-md: 1.4;
+
+  // Motion
+  --feu-transition-fast: 120ms ease-out;
+}

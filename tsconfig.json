@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./packages/tokens" },
+    { "path": "./packages/components-html" },
+    { "path": "./packages/components-ng" }
+  ]
+}

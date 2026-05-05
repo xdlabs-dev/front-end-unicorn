@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@feu/tokens": ["packages/tokens/src/index.ts"],
+      "@feu/tokens/*": ["packages/tokens/src/*"],
+      "@feu/components-html": ["packages/components-html/src/index.ts"],
+      "@feu/components-html/*": ["packages/components-html/src/*"],
+      "@feu/components-ng": ["packages/components-ng/src/public-api.ts"],
+      "@feu/components-ng/*": ["packages/components-ng/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/dist", "**/storybook-static", "**/.angular"]
+}
