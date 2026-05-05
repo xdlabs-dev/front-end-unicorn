@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": ["src/**/*", "astro.config.mjs"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@feu/tokens": ["../../packages/tokens/src/index.ts"],
+      "@feu/tokens/*": ["../../packages/tokens/*"],
+      "@feu/components-html": ["../../packages/components-html/src/index.ts"],
+      "@feu/components-html/*": ["../../packages/components-html/src/*"],
+      "@feu/components-ng": ["../../packages/components-ng/src/public-api.ts"]
+    }
+  }
+}

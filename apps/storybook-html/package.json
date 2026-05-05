@@ -1,0 +1,24 @@
+{
+  "name": "@feu/storybook-html",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o storybook-static",
+    "preview": "vite preview --outDir storybook-static --port 6007"
+  },
+  "dependencies": {
+    "@feu/components-html": "workspace:*",
+    "@feu/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-themes": "^8.3.5",
+    "@storybook/html": "^8.3.5",
+    "@storybook/html-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "storybook": "^8.3.5",
+    "vite": "^5.4.10"
+  }
+}

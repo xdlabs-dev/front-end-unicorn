@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+---
+<Base title="feu — front-end unicorn" theme={theme}>
+  <h1>front-end unicorn</h1>
+  <p>
+    Two parallel component libraries (HTML/JS and Angular 20) built on a shared
+    SCSS token system, with multiple themes loaded as separate CSS bundles.
+  </p>
+  <p>
+    Active theme: <strong>{theme}</strong>. Swap it via the toolbar in the top-right
+    or the <code>?theme=</code> query param. Each theme is its own compiled CSS
+    bundle under <code>/_themes/</code>.
+  </p>
+  <ul>
+    <li><a href={`/button/?theme=${theme}`}>Button</a></li>
+    <li><a href={`/input/?theme=${theme}`}>Input</a></li>
+    <li><a href={`/card/?theme=${theme}`}>Card</a></li>
+    <li><a href={`/modal/?theme=${theme}`}>Modal</a></li>
+    <li><a href={`/tabs/?theme=${theme}`}>Tabs</a></li>
+  </ul>
+</Base>

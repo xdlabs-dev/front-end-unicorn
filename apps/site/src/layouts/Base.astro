@@ -1,0 +1,50 @@
+---
+/**
+ * Base layout. Selects which compiled theme bundle to load via the `theme` prop,
+ * so changing the theme is a matter of swapping the link-href — exactly what the
+ * "load different bundles" requirement asks for.
+ */
+type ThemeName = 'light' | 'dark' | 'brand';
+
+interface Props {
+  title?: string;
+  theme?: ThemeName;
+}
+
+const { title = 'feu site', theme = 'light' } = Astro.props;
+
+// Static asset URLs for each theme bundle, resolved from @feu/tokens at build time.
+const THEME_BUNDLES: Record<ThemeName, string> = {
+  light: '/_themes/light.css',
+  dark: '/_themes/dark.css',
+  brand: '/_themes/brand.css',
+};
+---
+<!doctype html>
+<html lang="en" data-feu-theme={theme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link rel="preload" as="style" href={THEME_BUNDLES[theme]} />
+    <link rel="stylesheet" href={THEME_BUNDLES[theme]} />
+  </head>
+  <body class="feu-root">
+    <nav style="display:flex;gap:12px;padding:12px;border-bottom:1px solid var(--feu-color-border);">
+      <a href="/">Home</a>
+      <a href="/button/">Button</a>
+      <a href="/input/">Input</a>
+      <a href="/card/">Card</a>
+      <a href="/modal/">Modal</a>
+      <a href="/tabs/">Tabs</a>
+      <span style="margin-left:auto;display:flex;gap:8px;">
+        <a href={`?theme=light`}>Light</a>
+        <a href={`?theme=dark`}>Dark</a>
+        <a href={`?theme=brand`}>Brand</a>
+      </span>
+    </nav>
+    <main style="padding:24px;">
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { ButtonComponent } from '@feu/components-ng';
+
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+---
+<Base title="Button — feu" theme={theme}>
+  <h1>Button</h1>
+
+  <h2>HTML / JS (custom element)</h2>
+  <div style="display:flex;gap:8px;">
+    <feu-button label="Primary" variant="primary"></feu-button>
+    <feu-button label="Secondary" variant="secondary"></feu-button>
+    <feu-button label="Ghost" variant="ghost"></feu-button>
+    <feu-button label="Disabled" disabled></feu-button>
+  </div>
+
+  <h2 style="margin-top:24px;">Angular</h2>
+  <div style="display:flex;gap:8px;">
+    <ButtonComponent label="Primary" variant="primary" client:load />
+    <ButtonComponent label="Secondary" variant="secondary" client:load />
+    <ButtonComponent label="Ghost" variant="ghost" client:load />
+    <ButtonComponent label="Disabled" disabled client:load />
+  </div>
+</Base>
+
+<script>
+  // Side-effect import registers <feu-button>, <feu-input>, etc.
+  import '@feu/components-html/elements';
+</script>

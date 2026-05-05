@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { ModalComponent } from '@feu/components-ng';
+
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+---
+<Base title="Modal — feu" theme={theme}>
+  <h1>Modal</h1>
+
+  <h2>HTML / JS</h2>
+  <button id="open-html" class="feu-btn feu-btn--primary">Open HTML modal</button>
+  <div id="modal-host"></div>
+
+  <h2 style="margin-top:24px;">Angular</h2>
+  <ModalComponent title="Confirm action" open={true} client:load>
+    Are you sure?
+  </ModalComponent>
+</Base>
+
+<script>
+  import { createModal } from '@feu/components-html';
+  const host = document.getElementById('modal-host');
+  const handle = createModal({ title: 'Confirm action', body: 'Are you sure?', open: false });
+  host?.appendChild(handle.element);
+  document.getElementById('open-html')?.addEventListener('click', () => handle.open());
+</script>

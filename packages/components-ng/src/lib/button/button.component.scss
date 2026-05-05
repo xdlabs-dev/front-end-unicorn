@@ -1,2 +1,2 @@
 // Re-uses the shared SCSS so visuals match the HTML version exactly.
-@import "../../../../components-html/src/components/button/button.scss";
+@use "../../../../components-html/src/components/button/button.scss" as *;

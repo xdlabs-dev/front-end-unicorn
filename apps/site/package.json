@@ -1,0 +1,30 @@
+{
+  "name": "@feu/site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/copy-themes.mjs",
+    "predev": "node scripts/copy-themes.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@analogjs/astro-angular": "^1.10.0",
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-server": "^20.0.0",
+    "@feu/components-html": "workspace:*",
+    "@feu/components-ng": "workspace:*",
+    "@feu/tokens": "workspace:*",
+    "astro": "^5.0.0",
+    "rxjs": "^7.8.1",
+    "zone.js": "^0.15.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.0"
+  }
+}

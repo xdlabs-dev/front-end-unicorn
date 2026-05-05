@@ -1,0 +1,34 @@
+{
+  "name": "@feu/storybook-ng",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6007",
+    "build": "storybook build -o storybook-static"
+  },
+  "dependencies": {
+    "@angular/animations": "^20.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/forms": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-browser-dynamic": "^20.0.0",
+    "@feu/components-ng": "workspace:*",
+    "@feu/tokens": "workspace:*",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.7.0",
+    "zone.js": "^0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.0.0",
+    "@angular/cli": "^20.0.0",
+    "@angular/compiler-cli": "^20.0.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-themes": "^8.3.5",
+    "@storybook/angular": "^8.3.5",
+    "storybook": "^8.3.5",
+    "typescript": "~5.8.0"
+  }
+}

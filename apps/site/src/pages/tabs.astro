@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { TabsComponent, TabPanelComponent } from '@feu/components-ng';
+
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+
+const items = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'details', label: 'Details' },
+  { id: 'history', label: 'History' },
+];
+---
+<Base title="Tabs — feu" theme={theme}>
+  <h1>Tabs</h1>
+
+  <h2>HTML / JS</h2>
+  <div id="tabs-host"></div>
+
+  <h2 style="margin-top:24px;">Angular</h2>
+  <TabsComponent items={items} activeId="overview" client:load>
+    <TabPanelComponent tabId="overview" activeId="overview" client:load>Overview</TabPanelComponent>
+    <TabPanelComponent tabId="details" activeId="overview" client:load>Details</TabPanelComponent>
+    <TabPanelComponent tabId="history" activeId="overview" client:load>History</TabPanelComponent>
+  </TabsComponent>
+</Base>
+
+<script>
+  import { createTabs } from '@feu/components-html';
+  const host = document.getElementById('tabs-host');
+  if (host) {
+    host.appendChild(createTabs({
+      items: [
+        { id: 'overview', label: 'Overview', content: 'Overview content' },
+        { id: 'details', label: 'Details', content: 'Details content' },
+        { id: 'history', label: 'History', content: 'History log' },
+      ],
+      activeId: 'overview',
+    }).element);
+  }
+</script>

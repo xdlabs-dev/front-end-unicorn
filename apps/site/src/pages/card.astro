@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { CardComponent } from '@feu/components-ng';
+
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+---
+<Base title="Card — feu" theme={theme}>
+  <h1>Card</h1>
+
+  <h2>HTML / JS (rendered server-side via factory)</h2>
+  <div id="card-html"></div>
+
+  <h2 style="margin-top:24px;">Angular</h2>
+  <CardComponent title="Card title" client:load>
+    A short description that lives inside the card body.
+  </CardComponent>
+</Base>
+
+<script>
+  import { createCard } from '@feu/components-html';
+  const host = document.getElementById('card-html');
+  if (host) host.appendChild(createCard({ title: 'Card title', body: 'A short description that lives inside the card body.' }));
+</script>

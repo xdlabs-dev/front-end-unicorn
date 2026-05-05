@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { InputComponent } from '@feu/components-ng';
+
+const theme = (Astro.url.searchParams.get('theme') ?? 'light') as 'light' | 'dark' | 'brand';
+---
+<Base title="Input — feu" theme={theme}>
+  <h1>Input</h1>
+
+  <h2>HTML / JS</h2>
+  <feu-input label="Email" placeholder="you@example.com" type="email"></feu-input>
+
+  <h2 style="margin-top:24px;">Angular</h2>
+  <InputComponent label="Email" placeholder="you@example.com" type="email" client:load />
+</Base>
+
+<script>
+  import '@feu/components-html/elements';
+</script>
