@@ -1,7 +1,8 @@
-// Design token CSS custom properties — single source of truth for colors,
-// spacing, radii, and typography across both component sets.
+// Default (light) design tokens. Theme bundles emit these custom
+// properties under :root; alternative themes override the same names.
+// This partial only defines the @mixin so themes can compose it.
 
-:root {
+@mixin feu-default-tokens {
   // Colors
   --feu-color-primary: #3b5bdb;
   --feu-color-primary-hover: #2f49b0;

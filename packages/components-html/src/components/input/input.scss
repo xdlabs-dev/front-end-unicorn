@@ -1,5 +1,3 @@
-@use "@feu/tokens/scss/mixins" as *;
-
 .feu-input-wrapper {
   display: flex;
   flex-direction: column;
@@ -23,8 +21,8 @@
 }
 
 .feu-input:focus-visible {
-  @include focus-ring;
-
+  outline: 2px solid var(--feu-color-focus);
+  outline-offset: 2px;
   border-color: var(--feu-color-focus);
 }
 

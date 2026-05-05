@@ -16,7 +16,22 @@
     },
     "./scss": "./src/scss/index.scss",
     "./scss/*": "./src/scss/*",
-    "./css": "./dist/tokens.css"
+    "./css": "./dist/tokens.css",
+    "./themes/light": {
+      "import": "./dist/themes/light.js",
+      "require": "./dist/themes/light.cjs"
+    },
+    "./themes/dark": {
+      "import": "./dist/themes/dark.js",
+      "require": "./dist/themes/dark.cjs"
+    },
+    "./themes/brand": {
+      "import": "./dist/themes/brand.js",
+      "require": "./dist/themes/brand.cjs"
+    },
+    "./themes/light.css": "./dist/themes/light.css",
+    "./themes/dark.css": "./dist/themes/dark.css",
+    "./themes/brand.css": "./dist/themes/brand.css"
   },
   "files": ["dist", "src/scss"],
   "scripts": {

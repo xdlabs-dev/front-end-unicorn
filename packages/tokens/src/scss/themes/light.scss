@@ -1,0 +1,8 @@
+// Light theme — the default token set.
+@use "../tokens" as *;
+@use "../reset";
+
+:root,
+[data-feu-theme="light"] {
+  @include feu-default-tokens;
+}

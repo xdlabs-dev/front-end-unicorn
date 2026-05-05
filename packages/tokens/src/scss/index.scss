@@ -1,5 +1,11 @@
+// Convenience aggregate that emits the default (light) theme + reset + mixins.
+// Themes can also be loaded individually from ./themes/*.scss for runtime swapping.
 @use "tokens";
 @use "reset";
 @forward "tokens";
 @forward "mixins";
 @forward "reset";
+
+:root {
+  @include tokens.feu-default-tokens;
+}

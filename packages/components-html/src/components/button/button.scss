@@ -1,8 +1,11 @@
-@use "@feu/tokens/scss/mixins" as *;
-
 .feu-btn {
-  @include button-reset;
-
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +22,8 @@
 }
 
 .feu-btn:focus-visible {
-  @include focus-ring;
+  outline: 2px solid var(--feu-color-focus);
+  outline-offset: 2px;
 }
 
 .feu-btn[disabled],

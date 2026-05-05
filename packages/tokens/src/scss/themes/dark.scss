@@ -1,0 +1,21 @@
+// Dark theme. Inherits the default token set, then overrides surface/text/border colors.
+@use "../tokens" as *;
+@use "../reset";
+
+:root,
+[data-feu-theme="dark"] {
+  @include feu-default-tokens;
+
+  // Overrides
+  --feu-color-primary: #748ffc;
+  --feu-color-primary-hover: #91a7ff;
+  --feu-color-primary-active: #5c7cfa;
+  --feu-color-surface: #1a1c23;
+  --feu-color-surface-muted: #25272e;
+  --feu-color-border: #383b45;
+  --feu-color-text: #f1f3f5;
+  --feu-color-text-muted: #adb5bd;
+  --feu-color-focus: #91a7ff;
+
+  color-scheme: dark;
+}

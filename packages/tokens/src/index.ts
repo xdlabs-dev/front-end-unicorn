@@ -5,6 +5,17 @@
 
 import './scss/index.scss';
 
+export type ThemeName = 'light' | 'dark' | 'brand';
+
+export const THEMES: readonly ThemeName[] = ['light', 'dark', 'brand'];
+
+/** URL of a theme's compiled CSS bundle, relative to the @feu/tokens package root. */
+export const THEME_CSS_URL: Record<ThemeName, string> = {
+  light: '@feu/tokens/themes/light.css',
+  dark: '@feu/tokens/themes/dark.css',
+  brand: '@feu/tokens/themes/brand.css',
+};
+
 export const colors = {
   primary: '#3b5bdb',
   primaryHover: '#2f49b0',
